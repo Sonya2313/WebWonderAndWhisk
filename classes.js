@@ -1,0 +1,390 @@
+const masterClasses = [
+  {
+    id: 'blueberry-tarts',
+    title: 'Video-class for BLUEBERRY tarts',
+    price: '1 900 $',
+    duration: 'duration: 2 h 10 min',
+    reviewsCount: 1001,
+    reviews: '1001 reviews',
+    image: './assets/tarts3.svg',
+    alt: 'Blueberry tarts',
+    description:
+      'Learn how to create elegant blueberry tarts with a crisp buttery shell, a smooth creamy filling, and a bright berry topping that looks refined and tastes fresh. In this master-class, you will work step by step with tart dough, baking accuracy, filling texture, and final decoration, learning how to balance sweetness, acidity, and structure for a dessert that feels both delicate and professional. You will also practice clean assembly, neat finishing, and presentation details that make individual tarts look polished, modern, and bakery-ready.',
+    imageDetails: './assets/tarts.svg',
+    category: 'tarts',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'strawberry-karpatka',
+    title: 'Video-class for KARPATKA',
+    price: '1 000 $',
+    duration: 'duration: 1 h 45 min',
+    reviewsCount: 100,
+    reviews: '100 reviews',
+    image: './assets/karpatka.svg',
+    alt: 'Strawberry Karpatka',
+    description:
+      'Discover how to make a light and elegant strawberry Karpatka with airy choux layers, delicate cream, and a fresh berry filling that adds brightness and balance to the dessert. During this class, you will learn how to bake the signature textured layers, prepare a smooth and stable cream, and assemble the cake so it stays soft, refined, and visually beautiful. We will also focus on texture contrast, clean finishing, and the details that give this pastry its modern and professional character.',
+    imageDetails: './assets/karpatka2.svg',
+    category: 'cakes',
+    reviewsList: '',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'tiramisu',
+    title: 'Video-class for TIRAMISU',
+    price: '1 000 $',
+    duration: 'duration: 1 h 30 min',
+    reviewsCount: 100,
+    reviews: '100 reviews',
+    image: './assets/tiramisy.svg',
+    alt: 'Tiramisu',
+    description:
+      'Master a classic tiramisu with delicate layers of coffee-soaked biscuits, airy mascarpone cream, and a soft cocoa finish that gives the dessert its elegant and timeless character. In this master-class, you will learn how to achieve the right cream texture, how to soak the layers correctly without losing structure, and how to create a balanced coffee flavor that feels rich but smooth. You will also practice clean layering and finishing so the final dessert looks refined, graceful, and beautifully complete.',
+    imageDetails: './assets/tiramisy2.svg',
+    category: 'cakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'raffaello-cake',
+    title: 'Video-class for RAFFAELLO cake',
+    price: '1 000 $',
+    duration: 'duration: 2 h 00 min',
+    reviewsCount: 100,
+    reviews: '100 reviews',
+    image: './assets/rafaello.svg',
+    alt: 'Raffaello cake',
+    description:
+      'Learn how to prepare a soft and elegant Raffaello cake with tender layers, delicate coconut notes, and a creamy filling inspired by the famous confection. In this class, you will work on texture balance, smooth assembly, and light decoration to create a cake that feels festive, refined, and beautifully harmonious in flavor. Special attention will be given to moisture, cream stability, and finishing details that make the dessert look luxurious while still feeling airy and delicate.',
+    imageDetails: './assets/rafaello2.svg',
+    category: 'cakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'lemon-cheesecake',
+    title: 'Video-class for LEMON cheesecake',
+    price: '1 300 $',
+    duration: 'duration: 1 h 50 min',
+    reviewsCount: 5688,
+    reviews: '5688 reviews',
+    image: './assets/lemoncheese.svg',
+    alt: 'Lemon cheesecake',
+    description:
+      'Create a fresh and refined lemon cheesecake with a creamy texture, bright citrus flavor, and a perfectly balanced taste that feels rich without becoming too heavy. During the lesson, you will learn how to prepare the base, mix the filling for a smooth and even result, and control the texture so the cheesecake stays stable, elegant, and beautifully clean when sliced. We will also focus on flavor balance, finishing details, and presentation so the final dessert looks polished and tastes fresh, delicate, and complete.',
+    imageDetails: './assets/lemonCheese2.svg',
+    category: 'cheesecakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'berry-eclairs',
+    title: 'Video-class for BERRY ECLAIRS',
+    price: '1 200 $',
+    duration: 'duration: 2 h 20 min',
+    reviewsCount: 7,
+    reviews: '7 reviews',
+    image: './assets/eclair.svg',
+    alt: 'Berry eclairs',
+    description:
+      'Learn how to make elegant éclairs with light choux pastry, silky cream fillings, and bright berry flavors that bring freshness and color to this classic pastry. In this master-class, you will practice preparing the dough, piping neatly, baking for the right hollow structure, and filling each éclair so it keeps a beautiful shape and a clean finish. You will also work on decoration, glaze, and texture contrast, learning how to create pastries that feel modern, balanced, and bakery-level refined.',
+    imageDetails: './assets/eclair2.svg',
+    category: 'buns',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'chocolate-mango-tarts',
+    title: 'Video-class for CHOCOLATE & MANGO tarts',
+    price: '2 000 $',
+    duration: 'duration: 2 h 05 min',
+    reviewsCount: 13300,
+    reviews: '13300 reviews',
+    image: './assets/chocTarts.svg',
+    alt: 'Chocolate and mango tarts',
+    description:
+      'Discover the elegant contrast of rich chocolate and bright mango in refined tarts with a crisp shell, a smooth layered filling, and a striking modern appearance. In this class, you will learn how to combine deep chocolate flavor with the freshness and light acidity of mango, creating a dessert that feels intense, balanced, and sophisticated at the same time. We will focus on texture control, clean layering, neat finishing, and visual presentation so each tart looks polished, fresh, and beautifully professional.',
+    imageDetails: './assets/chocTarts2.svg',
+    category: 'tarts',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'carrot-cake',
+    title: 'Video-class for CARROT cake',
+    price: '900 $',
+    duration: 'duration: 1 h 40 min',
+    reviewsCount: 99,
+    reviews: '99 reviews',
+    image: './assets/my4.svg',
+    alt: 'Carrot cake',
+    description:
+      'Master a moist and flavorful carrot cake with tender layers, warm spices, and a smooth cream cheese frosting that gives the dessert its rich and comforting character. In this class, you will learn how to build a balanced batter, preserve softness and moisture, assemble the layers neatly, and create a finish that looks elegant rather than heavy. Special attention will be given to spice balance, texture, filling consistency, and decoration, so the final cake feels modern, refined, and full of warm homemade charm.',
+    imageDetails: './assets/my3.svg',
+    category: 'cakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'baklava',
+    title: 'Video-class for BAKLAVA',
+    price: '20 000 $',
+    duration: 'duration: 2 h 30 min',
+    reviewsCount: 705,
+    reviews: '705 reviews',
+    image: './assets/baklava2.svg',
+    alt: 'Baklava',
+    description:
+      'Learn how to prepare classic baklava with thin crisp layers of pastry, fragrant nuts, and a perfectly balanced syrup that gives the dessert its glossy finish and rich flavor. In this master-class, you will work with layering technique, careful baking, syrup application, and structure, learning how to keep the pastry delicate and crisp while allowing the filling to remain aromatic and satisfying. We will also focus on cutting, presentation, and sweetness balance so the final result looks luxurious, elegant, and beautifully complete.',
+    imageDetails: './assets/baklava2.svg',
+    category: 'pastries',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'blueberry-karpatka',
+    title: 'Video-class for BLUEBERRY KARPATKA',
+    price: '20 000 $',
+    duration: 'duration: 1 h 50 min',
+    reviewsCount: 705,
+    reviews: '705 reviews',
+    image: './assets/karpatkaCh.svg',
+    alt: 'Blueberry Karpatka',
+    description:
+      'Create a delicate blueberry Karpatka with airy choux layers, a silky cream filling, and a bright berry accent that gives the dessert freshness, elegance, and beautiful visual contrast. During this class, you will learn how to achieve the signature light structure, prepare a stable cream, and assemble the dessert so it remains soft, balanced, and visually refined. We will pay special attention to layering, texture, and flavor harmony, combining airy pastry, creamy filling, and juicy berry notes into a dessert that feels modern and polished.',
+    imageDetails: './assets/karpatkaCh2.svg',
+    category: 'cakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'triple-chocolate-mousse-cake',
+    title: 'Video-class for TRIPLE CHOCOLATE MOUSSE cake',
+    price: '20 000 $',
+    duration: 'duration: 2 h 15 min',
+    reviewsCount: 705,
+    reviews: '705 reviews',
+    image: './assets/muss.svg',
+    alt: 'Triple chocolate mousse cake',
+    description:
+      'Learn how to make a refined triple chocolate mousse cake with distinct layers of dark, milk, and white chocolate, each adding its own depth, sweetness, and texture. In this master-class, you will focus on mousse consistency, clean layering, structural stability, and a polished final finish that gives the dessert a luxurious and professional appearance. You will also learn how to balance the three chocolate components so the final cake feels rich, elegant, smooth, and visually striking in every slice.',
+    imageDetails: './assets/muss.svg',
+    category: 'cakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+  {
+    id: 'medovik',
+    title: 'Video-class for MEDOVIK cake',
+    price: '20 000 $',
+    duration: 'duration: 2 h 00 min',
+    reviewsCount: 705,
+    reviews: '705 reviews',
+    image: './assets/medovik.svg',
+    alt: 'Medovik',
+    description:
+      'Master a classic Medovik with thin honey layers and a smooth cream that gradually softens the cake into a delicate, rich, and deeply flavorful dessert. In this class, you will learn how to prepare the dough, roll and bake even layers, balance the cream, and assemble the cake so that it matures into the soft texture Medovik is known for. We will also focus on the final finish, crumb coating, structure, and resting process so the result feels elegant, tender, and full of warm honey depth.',
+    imageDetails: './assets/medovik2.svg',
+    category: 'cakes',
+    reviewsList: [
+      'Very clear explanation and beautiful final result.',
+      'I loved the texture of the cream and the decoration tips.',
+      'The class is detailed, elegant, and easy to follow.',
+    ],
+  },
+];
+
+const classesList = document.getElementById('classes-list');
+const dialog = document.getElementById('masterclass-dialog');
+const dialogImage = document.getElementById('dialog-image');
+const dialogTitle = document.getElementById('dialog-title');
+const dialogDuration = document.getElementById('dialog-duration');
+const dialogDescription = document.getElementById('dialog-description');
+
+const filterSelect = document.getElementById('class-filter');
+let currentFilter = 'all';
+const sortingSelect = document.getElementById('sorting');
+let currentSort = '';
+const searchInput = document.getElementById('search');
+let currentSearch = '';
+
+const dialogTabs = document.querySelectorAll('.dialog-tab');
+const descriptionPanel = document.getElementById('description-panel');
+const reviewsPanel = document.getElementById('reviews-panel');
+const dialogReviews = document.getElementById('dialog-reviews');
+
+dialogTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    dialogTabs.forEach((button) => button.classList.remove('is-active'));
+    tab.classList.add('is-active');
+    const selectedTab = tab.dataset.tab;
+
+    if (selectedTab === 'description') {
+      descriptionPanel.classList.remove('hidden');
+      reviewsPanel.classList.add('hidden');
+    }
+
+    if (selectedTab === 'reviews') {
+      reviewsPanel.classList.remove('hidden');
+      descriptionPanel.classList.add('hidden');
+    }
+  });
+});
+
+filterSelect.addEventListener('change', () => {
+  currentFilter = filterSelect.value;
+  renderCards();
+});
+
+sortingSelect.addEventListener('change', () => {
+  currentSort = sortingSelect.value;
+  renderCards();
+});
+
+searchInput.addEventListener('input', () => {
+  currentSearch = searchInput.value.toLowerCase().trim();
+  renderCards();
+});
+
+function getPriceValue(price) {
+  return Number(price.replace(/\s/g, '').replace('$', ''));
+}
+
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('.card-title-button');
+  if (!button) return;
+
+  OpenMasterClassDialog(button.dataset.id);
+});
+
+function renderCards() {
+  let filteredCards =
+    currentFilter === 'all'
+      ? masterClasses
+      : masterClasses.filter((item) => item.category === currentFilter);
+
+  if (currentSearch !== '') {
+    filteredCards = filteredCards.filter((item) => {
+      return (
+        item.title.toLowerCase().includes(currentSearch) ||
+        item.category.toLowerCase().includes(currentSearch)
+      );
+    });
+  }
+
+  if (filteredCards.length === 0) {
+    classesList.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-state-icon" aria-hidden="true">🔍</div>
+      <h3 class="empty-state-title">No master-classes found</h3>
+      <p class="empty-state-text">
+        Try another search word or choose a different category.
+      </p>
+    </div>
+  `;
+    return;
+  }
+
+  if (currentSort === 'price-asc') {
+    filteredCards.sort(
+      (a, b) => getPriceValue(a.price) - getPriceValue(b.price),
+    );
+  }
+
+  if (currentSort === 'price-desc') {
+    filteredCards.sort(
+      (a, b) => getPriceValue(b.price) - getPriceValue(a.price),
+    );
+  }
+
+  if (currentSort === 'popularity') {
+    filteredCards.sort((a, b) => b.reviewsCount - a.reviewsCount);
+  }
+
+  classesList.innerHTML = filteredCards
+    .map(function (item) {
+      return `
+    <article class="card">
+        <img src="${item.image}" alt="${item.alt}" class="card-image" />
+
+        <div class="card-content">
+            <div class="card-title-wrap">
+              <button class="card-title-button" data-id="${item.id}" type="button">${item.title}</button>
+            </div>
+
+            <div class="card-footer">
+                <button class="card-favorite" type="button">♡</button>
+                <p class="card-price">${item.price}</p>
+                <button class="card-in-basket" type="button">🛒</button>
+            </div>
+
+            <p class="card-reviews">${item.reviews} ☆</p>
+        </div>
+    </article>
+    `;
+    })
+    .join('');
+}
+
+function OpenMasterClassDialog(id) {
+  const masterClass = masterClasses.find((item) => item.id === id);
+
+  if (!masterClass) return;
+
+  dialogImage.src = masterClass.imageDetails;
+  dialogTitle.textContent = masterClass.title;
+  dialogDuration.textContent = masterClass.duration;
+  dialogDescription.textContent = masterClass.description;
+
+  dialogReviews.innerHTML = masterClass.reviewsList
+    .map((review) => `<p class="review-item">“${review}”</p>`)
+    .join('');
+
+  descriptionPanel.classList.remove('hidden');
+  reviewsPanel.classList.add('hidden');
+
+  dialogTabs.forEach((button) => button.classList.remove('is-active'));
+  document
+    .querySelector('.dialog-tab[data-tab="description"]')
+    .classList.add('is-active');
+
+  dialog.showModal();
+}
+
+renderCards();

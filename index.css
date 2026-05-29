@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d3cccc;
+  color: #2f2b2b;
+  font-family: Georgia, serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  margin-top: -17px;
+  padding: 28px 32px;
+  gap: 24px;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.nav {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 30px;
+  background-color: #f1ece4;
+  border: 2px solid #8f8a80;
+  border-radius: 9999px;
+  padding: 0px 50px;
+}
+
+.nav a {
+  color: #2f2b2b;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #8f8a80;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  margin-left: auto;
+}
+
+.profile-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #2f2b2b;
+  flex-shrink: 0;
+}
+
+.language-select {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #2f2b2b;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.language-switcher {
+  margin-left: auto;
+}
+
+.hero {
+  position: relative;
+  height: 600px;
+  margin-top: -20px;
+  background-image: url('./assets/hero-bg1.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(75, 74, 72, 0.38);
+  z-index: 1;
+}
+
+.hero-person {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-60%);
+  height: 750px;
+  width: auto;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-text-block {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 20px;
+  z-index: 3;
+}
+
+.hero-top-text {
+  font-size: 28px;
+  margin-bottom: -10px;
+  letter-spacing: 3px;
+}
+
+.hero-main-text {
+  font-size: 100px;
+  margin-bottom: 10px;
+}
+
+.hero-bottom-text {
+  font-size: 22px;
+}
+
+.action-block {
+  display: flex;
+  justify-content: center;
+
+  gap: 45px;
+  margin-top: 30px;
+}
+
+.action-block a {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 30px;
+  border-radius: 9999px;
+  color: rgb(78, 76, 76);
+  min-width: 300px;
+  min-height: 50px;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.master-classes-button {
+  background-color: #f1ece4;
+}
+.master-classes-button:hover {
+  background-color: #e7dfd3;
+}
+
+.pastry-shop-button {
+  box-sizing: border-box;
+  border: 6px solid #ffffff;
+}
+
+.pastry-shop-button:hover {
+  background-color: #bab9b9;
+}
+
+.hero-action-divider {
+  width: 8px;
+  height: 66px;
+  margin-top: 5px;
+  background-color: #8b857d;
+  border-radius: 999px;
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wonder&Whisk</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="./assets/logo.svg" alt="Wonder & Whisk logo" class="logo" />
+
+      <nav class="nav">
+        <a
+          href="/aboutUs.html"
+          id="about-link"
+          target="_blank"
+          data-i18n="about"
+          >ABOUT US</a
+        >
+
+        <div class="left-nav">
+          <a href="/profile.html" class="profile-link" target="_blank">
+            <span id="profile-link-text" data-i18n="profile">PROFILE</span>
+            <svg
+              class="profile-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"></path>
+            </svg>
+          </a>
+          <div class="language-switcher">
+            <select
+              id="language-select"
+              class="language-select"
+              aria-label="Select language"
+            >
+              <option value="en">ENG</option>
+              <option value="ru">RU</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <img class="hero-person" src="./assets/human.svg" alt="Chef" />
+
+        <div class="hero-text-block">
+          <p class="hero-top-text" id="hero-top-text" data-i18n="heroTop">
+            FROM TASTES & TEXTURES TO
+          </p>
+          <h1 class="hero-main-text" id="hero-main-text" data-i18n="heroMain">
+            PROFESSIONALS
+          </h1>
+          <p
+            class="hero-bottom-text"
+            id="hero-bottom-text"
+            data-i18n="heroBottom"
+          >
+            WE BUILD BRANDS THAT SPEAK FOOD
+          </p>
+        </div>
+      </section>
+
+      <div class="action-block">
+        <a
+          class="master-classes-button"
+          id="master-classes-button"
+          href="/classes.html"
+          target="_blank"
+          data-i18n="masterClasses"
+        >
+          master-classes
+        </a>
+
+        <span class="hero-action-divider"></span>
+
+        <a
+          class="pastry-shop-button"
+          id="pastry-shop-button"
+          href="/pastryShop.html"
+          target="_blank"
+          data-i18n="shop"
+        >
+          pastry shop
+        </a>
+      </div>
+    </main>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
