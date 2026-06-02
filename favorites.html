@@ -3,25 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <title>Favorites</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="favorites.css" />
   </head>
   <body>
     <header>
       <nav class="nav">
         <div class="nav-left">
           <a href="./index.html" class="nav-icon-link" aria-label="Home">⌂</a>
-
-          <a
-            href="./favorites.html"
-            class="nav-icon-link heart"
-            aria-label="Favorites"
-            ><i class="fa fa-heart" aria-hidden="true"></i
-          ></a>
           <a href="./cart.html" class="nav-icon-link" aria-label="Cart">🛒</a>
           <span id="cart-counter">0</span>
         </div>
@@ -61,8 +54,13 @@
       </nav>
     </header>
     <main class="main">
-      <h1 class="main-text">PROFILE</h1>
+      <section class="hero">
+        <h1 class="main-text">Favorites</h1>
+      </section>
+
+      <section id="favorites-list" class="favorites-list"></section>
     </main>
-    <script type="module" src="classes.js"></script>
+
+    <script type="module" src="favorites.js"></script>
   </body>
 </html>

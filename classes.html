@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Master-classes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="classes.css" />
   </head>
   <body>
@@ -11,13 +15,15 @@
       <nav class="nav">
         <div class="nav-left">
           <a href="./index.html" class="nav-icon-link" aria-label="Home">⌂</a>
-          <a href="./cart.html" class="nav-icon-link" aria-label="Cart">🛒</a>
+
           <a
             href="./favorites.html"
             class="nav-icon-link heart"
             aria-label="Favorites"
-            >♥</a
-          >
+            ><i class="fa fa-heart" aria-hidden="true"></i
+          ></a>
+          <a href="./cart.html" class="nav-icon-link" aria-label="Cart">🛒</a>
+          <span id="cart-counter">0</span>
         </div>
         <a
           href="./index.html"
@@ -146,6 +152,7 @@
         </p>
       </div>
     </footer>
+    <div id="toast" class="toast"></div>
     <script type="module" src="classes.js"></script>
   </body>
 </html>
