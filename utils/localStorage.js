@@ -104,4 +104,12 @@ function getCartCount() {
   return getCart().length;
 }
 
-export { isFavorite, toggleFavorites, getFavorites, addToCart, getCartCount };
+export {
+  isFavorite,
+  toggleFavorites,
+  getFavorites,
+  addToCart,
+  getCartCount,
+  getCart,
+  removeFromCart,
+};

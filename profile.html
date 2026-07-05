@@ -11,57 +11,68 @@
     <link rel="stylesheet" href="profile.css" />
   </head>
   <body>
-    <header>
-      <nav class="nav">
-        <div class="nav-left">
-          <a href="./index.html" class="nav-icon-link" aria-label="Home">⌂</a>
+    <main class="profile-page">
+      <section class="profile-hero">
+        <div class="profile-overlay"></div>
 
+        <div class="profile-shell">
           <a
-            href="./favorites.html"
-            class="nav-icon-link heart"
-            aria-label="Favorites"
-            ><i class="fa fa-heart" aria-hidden="true"></i
-          ></a>
-          <a href="./cart.html" class="nav-icon-link" aria-label="Cart">🛒</a>
-          <span id="cart-counter">0</span>
-        </div>
-        <a
-          href="./index.html"
-          class="nav-logo"
-          aria-label="Wonder and Whisk home"
-        >
-          <img class="logo" src="./assets/logo.svg" alt="Wonder and Whisk" />
-        </a>
-        <div class="nav-right">
-          <a href="/profile.html" class="profile-link" target="_blank">
-            <span id="profile-link-text" data-i18n="profile">PROFILE</span>
-            <svg
-              class="profile-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="8" r="4"></circle>
-              <path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"></path>
-            </svg>
+            href="./index.html"
+            class="profile-logo"
+            aria-label="Wonder and Whisk home"
+          >
+            <img src="./assets/logo.svg" alt="Wonder and Whisk" />
           </a>
 
-          <select
-            id="language-select"
-            class="language-select"
-            aria-label="Language"
-          >
-            <option value="en">ENG</option>
-            <option value="ru">RU</option>
-          </select>
+          <section class="login-card" aria-labelledby="login-title">
+            <div class="login-decor" aria-hidden="true">🥐</div>
+
+            <h1 id="login-title" class="login-title" data-i18n="memberLogin">
+              MEMBER LOGIN
+            </h1>
+
+            <form class="login-form">
+              <label class="sr-only" for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                class="login-input"
+                data-i18n-placeholder="emailAddress"
+                placeholder="EMAIL ADDRESS"
+              />
+
+              <label class="sr-only" for="login-name">Login</label>
+              <input
+                id="login-name"
+                type="text"
+                class="login-input"
+                data-i18n-placeholder="login"
+                placeholder="LOGIN"
+              />
+
+              <label class="sr-only" for="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                class="login-input"
+                data-i18n-placeholder="password"
+                placeholder="PASSWORD"
+              />
+
+              <button type="submit" class="login-button" data-i18n="signIn">
+                SIGN IN
+              </button>
+            </form>
+
+            <p class="login-footer-text">
+              <span data-i18n="notMember">NOT A MEMBER?</span>
+              <a href="#" class="login-link" data-i18n="signUpNow"
+                >SIGN UP NOW</a
+              >
+            </p>
+          </section>
         </div>
-      </nav>
-    </header>
-    <main class="main">
-      <h1 class="main-text">PROFILE</h1>
+      </section>
     </main>
     <script type="module" src="classes.js"></script>
   </body>

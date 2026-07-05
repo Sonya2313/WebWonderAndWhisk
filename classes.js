@@ -5,6 +5,18 @@ import {
   getCartCount,
 } from './utils/localStorage.js';
 import { masterClasses } from './utils/masterClasses.js';
+import { applyTranslations } from './language.js';
+
+const toastMessages = {
+  en: {
+    addedToCart: (title) => `${title} added to cart`,
+    alreadyInCart: (title) => `${title} is already in cart`,
+  },
+  ru: {
+    addedToCart: (title) => `${title} добавлен в корзину`,
+    alreadyInCart: (title) => `${title} уже в корзине`,
+  },
+};
 
 const classesList = document.getElementById('classes-list');
 const dialog = document.getElementById('masterclass-dialog');
@@ -71,7 +83,7 @@ document.addEventListener('click', (event) => {
   const button = event.target.closest('.card-title-button');
   if (!button) return;
 
-  OpenMasterClassDialog(button.dataset.id);
+  openMasterClassDialog(button.dataset.id);
 });
 
 // клик по сердцу (избранное)
@@ -135,42 +147,38 @@ document.addEventListener('click', (event) => {
 
   const isAdded = addToCart(id);
 
+  const lang = getCurrentLang();
+  const messageSet = toastMessages[lang] || toastMessages.en;
+
   if (isAdded) {
     updateCartCounter();
-    showToast(`${masterClass.title} added to cart`, 'success');
+    showToast(messageSet.addedToCart(masterClass.title[lang]), 'success');
   } else {
-    showToast(`${masterClass.title} is already in cart`, 'info');
+    showToast(messageSet.alreadyInCart(masterClass.title[lang]), 'info');
   }
 });
 
 //карточки мастер-классов
 
+function getCurrentLang() {
+  return localStorage.getItem('site_language') || 'en';
+}
+
 function renderCards() {
+  const lang = getCurrentLang();
+
   let filteredCards =
     currentFilter === 'all'
-      ? masterClasses
+      ? [...masterClasses]
       : masterClasses.filter((item) => item.category === currentFilter);
 
   if (currentSearch !== '') {
     filteredCards = filteredCards.filter((item) => {
       return (
-        item.title.toLowerCase().includes(currentSearch) ||
+        item.title[lang].toLowerCase().includes(currentSearch) ||
         item.category.toLowerCase().includes(currentSearch)
       );
     });
-  }
-
-  if (filteredCards.length === 0) {
-    classesList.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon" aria-hidden="true">🔍</div>
-        <h3 class="empty-state-title">No master-classes found</h3>
-        <p class="empty-state-text">
-          Try another search word or choose a different category.
-        </p>
-      </div>
-    `;
-    return;
   }
 
   if (currentSort === 'price-asc') {
@@ -189,16 +197,35 @@ function renderCards() {
     filteredCards.sort((a, b) => b.reviewsCount - a.reviewsCount);
   }
 
+  if (filteredCards.length === 0) {
+    classesList.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon" aria-hidden="true">🔍</div>
+        <h3 class="empty-state-title">
+          ${lang === 'ru' ? 'Ничего не найдено' : 'No master-classes found'}
+        </h3>
+        <p class="empty-state-text">
+          ${
+            lang === 'ru'
+              ? 'Попробуйте другой поисковый запрос или выберите другую категорию.'
+              : 'Try another search word or choose a different category.'
+          }
+        </p>
+      </div>
+    `;
+    return;
+  }
+
   classesList.innerHTML = filteredCards
     .map((item) => {
       return `
         <article class="card" data-id="${item.id}">
-          <img src="${item.image}" alt="${item.alt}" class="card-image" />
+          <img src="${item.image}" alt="${item.alt[lang]}" class="card-image" />
 
           <div class="card-content">
             <div class="card-title-wrap">
               <button class="card-title-button" data-id="${item.id}" type="button">
-                ${item.title}
+                ${item.title[lang]}
               </button>
             </div>
 
@@ -208,10 +235,13 @@ function renderCards() {
               </button>
 
               <p class="card-price">${item.price}</p>
-              <button class="card-in-basket" type="button">🛒</button>
+
+              <button class="card-in-basket" type="button">
+                <i class="fa fa-shopping-cart nav-icon-link cart-link" aria-hidden="true"></i>
+              </button>
             </div>
 
-            <p class="card-reviews">${item.reviews} ☆</p>
+            <p class="card-reviews">${item.reviews[lang]} ☆</p>
           </div>
         </article>
       `;
@@ -219,16 +249,19 @@ function renderCards() {
     .join('');
 }
 
-function OpenMasterClassDialog(id) {
+function openMasterClassDialog(id) {
   const masterClass = masterClasses.find((item) => item.id === id);
   if (!masterClass) return;
 
-  dialogImage.src = masterClass.imageDetails;
-  dialogTitle.textContent = masterClass.title;
-  dialogDuration.textContent = masterClass.duration;
-  dialogDescription.textContent = masterClass.description;
+  const lang = getCurrentLang();
 
-  dialogReviews.innerHTML = masterClass.reviewsList
+  dialogImage.src = masterClass.imageDetails;
+  dialogImage.alt = masterClass.alt[lang];
+  dialogTitle.textContent = masterClass.title[lang];
+  dialogDuration.textContent = masterClass.duration[lang];
+  dialogDescription.textContent = masterClass.description[lang];
+
+  dialogReviews.innerHTML = masterClass.reviewsList[lang]
     .map((review) => `<p class="review-item">“${review}”</p>`)
     .join('');
 
@@ -242,7 +275,10 @@ function OpenMasterClassDialog(id) {
 
   dialog.showModal();
 }
-
+document.addEventListener('languageChanged', () => {
+  renderCards();
+});
+applyTranslations(getCurrentLang());
 // стартовый рендер
 renderCards();
 updateCartCounter();

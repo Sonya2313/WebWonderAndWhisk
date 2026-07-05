@@ -14,10 +14,20 @@
     <header>
       <nav class="nav">
         <div class="nav-left">
-          <a href="./index.html" class="nav-icon-link" aria-label="Home">⌂</a>
-          <a href="./cart.html" class="nav-icon-link" aria-label="Cart">🛒</a>
-          <span id="cart-counter">0</span>
+          <a href="./classes.html" class="nav-icon-link" aria-label="Home">
+            <i class="fa fa-home"></i>
+          </a>
+
+          <a
+            href="./cart.html"
+            class="nav-icon-link cart-link"
+            aria-label="Cart"
+          >
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span id="cart-counter" class="cart-counter">0</span>
+          </a>
         </div>
+
         <a
           href="./index.html"
           class="nav-logo"
@@ -25,8 +35,9 @@
         >
           <img class="logo" src="./assets/logo.svg" alt="Wonder and Whisk" />
         </a>
+
         <div class="nav-right">
-          <a href="/profile.html" class="profile-link" target="_blank">
+          <a href="./profile.html" class="profile-link">
             <span id="profile-link-text" data-i18n="profile">PROFILE</span>
             <svg
               class="profile-icon"
@@ -53,9 +64,10 @@
         </div>
       </nav>
     </header>
+
     <main class="main">
       <section class="hero">
-        <h1 class="main-text">Favorites</h1>
+        <h1 class="main-text" data-i18n="favoritesTitle">Favorites</h1>
       </section>
 
       <section id="favorites-list" class="favorites-list"></section>

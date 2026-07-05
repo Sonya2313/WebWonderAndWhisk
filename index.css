@@ -26,7 +26,7 @@ body {
 }
 
 .nav {
-  min-height: 40px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   flex: 1;

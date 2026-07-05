@@ -14,17 +14,28 @@
     <header>
       <nav class="nav">
         <div class="nav-left">
-          <a href="./index.html" class="nav-icon-link" aria-label="Home">⌂</a>
+          <a href="./index.html" class="nav-icon-link" aria-label="Home">
+            <i class="fa fa-home"></i>
+          </a>
 
           <a
             href="./favorites.html"
-            class="nav-icon-link heart"
+            class="nav-icon-link heart nav-favorite-link"
             aria-label="Favorites"
-            ><i class="fa fa-heart" aria-hidden="true"></i
-          ></a>
-          <a href="./cart.html" class="nav-icon-link" aria-label="Cart">🛒</a>
-          <span id="cart-counter">0</span>
+          >
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="./cart.html"
+            class="nav-icon-link cart-link"
+            aria-label="Cart"
+          >
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span id="cart-counter" class="cart-counter">0</span>
+          </a>
         </div>
+
         <a
           href="./index.html"
           class="nav-logo"
@@ -32,8 +43,9 @@
         >
           <img class="logo" src="./assets/logo.svg" alt="Wonder and Whisk" />
         </a>
+
         <div class="nav-right">
-          <a href="/profile.html" class="profile-link" target="_blank">
+          <a href="./profile.html" class="profile-link">
             <span id="profile-link-text" data-i18n="profile">PROFILE</span>
             <svg
               class="profile-icon"
@@ -60,28 +72,41 @@
         </div>
       </nav>
     </header>
+
     <main class="main">
       <section class="hero">
-        <p class="hero-top-text">DISCOVER PASTRY</p>
-        <h1 class="hero-main-text">Master-Classes</h1>
-        <p class="hero-bottom-text">THAT TURN PRACTICE INTO WONDER</p>
+        <p class="hero-top-text" data-i18n="classesHeroTop">DISCOVER PASTRY</p>
+        <h1 class="hero-main-text" data-i18n="classesHeroTitle">
+          Master-Classes
+        </h1>
+        <p class="hero-bottom-text" data-i18n="classesHeroBottom">
+          THAT TURN PRACTICE INTO WONDER
+        </p>
       </section>
 
       <section class="controls">
         <select id="class-filter" class="controls-select">
-          <option value="" selected disabled hidden>Categories</option>
-          <option value="all">All</option>
-          <option value="cakes">Cakes</option>
-          <option value="buns">Buns</option>
-          <option value="cheesecakes">Cheesecakes</option>
-          <option value="tarts">tarts</option>
+          <option value="" selected disabled hidden data-i18n="categories">
+            Categories
+          </option>
+          <option value="all" data-i18n="all">All</option>
+          <option value="cakes" data-i18n="cakes">Cakes</option>
+          <option value="buns" data-i18n="buns">Buns</option>
+          <option value="cheesecakes" data-i18n="cheesecakes">
+            Cheesecakes
+          </option>
+          <option value="tarts" data-i18n="tarts">Tarts</option>
         </select>
 
         <select id="sorting" class="controls-select">
-          <option value="" selected disabled hidden>Sorting</option>
-          <option value="price-asc">Price ↑</option>
-          <option value="price-desc">Price ↓</option>
-          <option value="popularity">By popularity</option>
+          <option value="" selected disabled hidden data-i18n="sorting">
+            Sorting
+          </option>
+          <option value="price-asc" data-i18n="priceAsc">Price ↑</option>
+          <option value="price-desc" data-i18n="priceDesc">Price ↓</option>
+          <option value="popularity" data-i18n="byPopularity">
+            By popularity
+          </option>
         </select>
 
         <div class="search-wrap">
@@ -90,6 +115,7 @@
             type="search"
             id="search"
             class="controls-select"
+            data-i18n-placeholder="searchPlaceholder"
             placeholder="Search master-class"
           />
         </div>
@@ -97,9 +123,15 @@
 
       <section id="classes-list" class="classes"></section>
     </main>
+
     <dialog class="masterclass-dialog" id="masterclass-dialog">
       <form method="dialog" class="dialog-close">
-        <button class="dialog-close-button" type="submit" aria-label="Close">
+        <button
+          class="dialog-close-button"
+          type="submit"
+          aria-label="Close"
+          data-i18n-aria-label="close"
+        >
           ✕
         </button>
       </form>
@@ -117,10 +149,17 @@
               type="button"
               class="dialog-tab is-active"
               data-tab="description"
+              data-i18n="description"
             >
               DESCRIPTION
             </button>
-            <button type="button" class="dialog-tab" data-tab="reviews">
+
+            <button
+              type="button"
+              class="dialog-tab"
+              data-tab="reviews"
+              data-i18n="reviews"
+            >
               REVIEWS
             </button>
           </div>
@@ -136,22 +175,30 @@
         </div>
       </div>
     </dialog>
+
     <footer class="footer">
       <div class="footer-inner">
         <ul class="footer-links">
-          <li><a href="./about.html">ABOUT US</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./payment.html">PAYMENT</a></li>
-          <li><a href="./questions.html">QUESTIONS</a></li>
-          <li><a href="./certificates.html">CERTIFICATES</a></li>
+          <li><a href="./about.html" data-i18n="aboutUs">ABOUT US</a></li>
+          <li><a href="./contact.html" data-i18n="contactUs">CONTACT US</a></li>
+          <li><a href="./payment.html" data-i18n="payment">PAYMENT</a></li>
+          <li>
+            <a href="./questions.html" data-i18n="questions">QUESTIONS</a>
+          </li>
+          <li>
+            <a href="./certificates.html" data-i18n="certificates">
+              CERTIFICATES
+            </a>
+          </li>
         </ul>
 
-        <p class="footer-text">
+        <p class="footer-text" data-i18n="classesFooterText">
           We offer hands-on pastry masterclasses for every level — from your
           first whisk to bakery-worthy creations.
         </p>
       </div>
     </footer>
+
     <div id="toast" class="toast"></div>
     <script type="module" src="classes.js"></script>
   </body>

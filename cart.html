@@ -14,14 +14,19 @@
     <header>
       <nav class="nav">
         <div class="nav-left">
-          <a href="./index.html" class="nav-icon-link" aria-label="Home">⌂</a>
+          <a href="./classes.html" class="nav-icon-link" aria-label="Home">
+            <i class="fa fa-home"></i>
+          </a>
+
           <a
             href="./favorites.html"
-            class="nav-icon-link heart"
+            class="nav-icon-link heart nav-favorite-link"
             aria-label="Favorites"
-            ><i class="fa fa-heart" aria-hidden="true"></i
-          ></a>
+          >
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </a>
         </div>
+
         <a
           href="./index.html"
           class="nav-logo"
@@ -29,6 +34,7 @@
         >
           <img class="logo" src="./assets/logo.svg" alt="Wonder and Whisk" />
         </a>
+
         <div class="nav-right">
           <a href="/profile.html" class="profile-link" target="_blank">
             <span id="profile-link-text" data-i18n="profile">PROFILE</span>
@@ -57,11 +63,116 @@
         </div>
       </nav>
     </header>
-    <main class="main">
-      <h1 class="main-text">My cart</h1>
 
-      <section id="cart-list" class="cart-list"></section>
+    <main class="main">
+      <h1 data-i18n="cartTitle" class="main-text">My cart</h1>
+
+      <section class="cart-layout">
+        <div class="cart-list" id="cart-list">
+          <!-- карточки товаров -->
+        </div>
+
+        <aside class="cart-summary" aria-labelledby="cart-summary-title">
+          <div class="cart-summary-card">
+            <div class="cart-summary-head">
+              <h2 id="cart-summary-title" data-i18n="orderSummary">
+                Order summary
+              </h2>
+              <p data-i18n="orderSummaryText">
+                Your selected treats, all in one place.
+              </p>
+            </div>
+
+            <div id="summary-items-list" class="summary-items-list"></div>
+
+            <div class="summary-divider"></div>
+
+            <div class="cart-summary-rows">
+              <div class="summary-row">
+                <span data-i18n="items">Items</span>
+                <span id="summary-items-count">3</span>
+              </div>
+
+              <div class="summary-row">
+                <span data-i18n="subtotal">Subtotal</span>
+                <span id="summary-subtotal">$42.00</span>
+              </div>
+
+              <div class="summary-row summary-row-total">
+                <span data-i18n="total">Total</span>
+                <span id="summary-total">$42.00</span>
+              </div>
+            </div>
+
+            <button
+              id="checkout-button"
+              class="checkout-button"
+              type="button"
+              data-i18n="checkout"
+            >
+              Proceed to checkout
+            </button>
+          </div>
+        </aside>
+      </section>
     </main>
+
+    <dialog id="payment-dialog" class="payment-dialog">
+      <form method="dialog" class="payment-dialog-form">
+        <button
+          type="submit"
+          class="payment-dialog-close"
+          aria-label="Close payment dialog"
+        >
+          ×
+        </button>
+
+        <h2 class="payment-dialog-title" data-i18n="paymentTitle">
+          Choose payment method
+        </h2>
+
+        <p class="payment-dialog-text" id="payment-dialog-item">
+          You are about to purchase this master class.
+        </p>
+
+        <div class="payment-options">
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="card" checked />
+            <span data-i18n="bankCard">Bank card</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="paypal" />
+            <span data-i18n="paypal">PayPal</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="apple-pay" />
+            <span data-i18n="applePay">Apple Pay</span>
+          </label>
+        </div>
+
+        <div class="payment-dialog-actions">
+          <button
+            type="submit"
+            class="payment-cancel-button"
+            data-i18n="cancel"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="button"
+            id="confirm-payment"
+            class="payment-confirm-button"
+            data-i18n="continue"
+          >
+            Continue
+          </button>
+        </div>
+      </form>
+    </dialog>
+
     <script type="module" src="cart.js"></script>
   </body>
 </html>

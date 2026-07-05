@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PASTRY SHOP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="pastryShop.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="./index.html" class="nav-icon-link" aria-label="Home">
+            <i class="fa fa-home"></i>
+          </a>
+
+          <a
+            href="./favorites.html"
+            class="nav-icon-link heart nav-favorite-link"
+            aria-label="Favorites"
+          >
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="./cart.html"
+            class="nav-icon-link cart-link"
+            aria-label="Cart"
+          >
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span id="cart-counter" class="cart-counter">0</span>
+          </a>
+        </div>
+
+        <a
+          href="./index.html"
+          class="nav-logo"
+          aria-label="Wonder and Whisk home"
+        >
+          <img class="logo" src="./assets/logo.svg" alt="Wonder and Whisk" />
+        </a>
+
+        <div class="nav-right">
+          <a href="./profile.html" class="profile-link">
+            <span id="profile-link-text" data-i18n="profile">PROFILE</span>
+            <svg
+              class="profile-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"></path>
+            </svg>
+          </a>
+
+          <select
+            id="language-select"
+            class="language-select"
+            aria-label="Language"
+          >
+            <option value="en">ENG</option>
+            <option value="ru">RU</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <p class="hero-top-text" data-i18n="classesHeroTop">
+          DISCOVER THE TASTE WITH
+        </p>
+        <h1 class="hero-main-text" data-i18n="classesHeroTitle">PASTRY SHOP</h1>
+        <p class="hero-bottom-text" data-i18n="classesHeroBottom">AND ENJOY</p>
+      </section>
+
+      <section class="controls">
+        <select id="class-filter" class="controls-select">
+          <option value="" selected disabled hidden data-i18n="categories">
+            Categories
+          </option>
+          <option value="all" data-i18n="all">All</option>
+          <option value="cakes" data-i18n="cakes">Cakes</option>
+          <option value="buns" data-i18n="buns">Buns</option>
+          <option value="cheesecakes" data-i18n="cheesecakes">
+            Cheesecakes
+          </option>
+          <option value="tarts" data-i18n="tarts">Tarts</option>
+        </select>
+
+        <select id="sorting" class="controls-select">
+          <option value="" selected disabled hidden data-i18n="sorting">
+            Sorting
+          </option>
+          <option value="price-asc" data-i18n="priceAsc">Price ↑</option>
+          <option value="price-desc" data-i18n="priceDesc">Price ↓</option>
+          <option value="popularity" data-i18n="byPopularity">
+            By popularity
+          </option>
+        </select>
+
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="search"
+            class="controls-select"
+            data-i18n-placeholder="searchPlaceholder"
+            placeholder="Search master-class"
+          />
+        </div>
+      </section>
+
+      <section id="classes-list" class="classes"></section>
+    </main>
+
+    <dialog class="masterclass-dialog" id="masterclass-dialog">
+      <form method="dialog" class="dialog-close">
+        <button
+          class="dialog-close-button"
+          type="submit"
+          aria-label="Close"
+          data-i18n-aria-label="close"
+        >
+          ✕
+        </button>
+      </form>
+
+      <div class="dialog-content">
+        <div class="dialog-media">
+          <img class="dialog-image" id="dialog-image" src="" alt="" />
+        </div>
+
+        <div class="dialog-info">
+          <h2 class="dialog-title" id="dialog-title"></h2>
+
+          <div class="dialog-tabs">
+            <button
+              type="button"
+              class="dialog-tab is-active"
+              data-tab="description"
+              data-i18n="description"
+            >
+              DESCRIPTION
+            </button>
+
+            <button
+              type="button"
+              class="dialog-tab"
+              data-tab="reviews"
+              data-i18n="reviews"
+            >
+              REVIEWS
+            </button>
+          </div>
+
+          <div class="dialog-panel" id="description-panel">
+            <p class="dialog-description" id="dialog-description"></p>
+            <p class="dialog-duration" id="dialog-duration"></p>
+          </div>
+
+          <div class="dialog-panel hidden" id="reviews-panel">
+            <div class="dialog-reviews" id="dialog-reviews"></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <ul class="footer-links">
+          <li><a href="./about.html" data-i18n="aboutUs">ABOUT US</a></li>
+          <li><a href="./contact.html" data-i18n="contactUs">CONTACT US</a></li>
+          <li><a href="./payment.html" data-i18n="payment">PAYMENT</a></li>
+          <li>
+            <a href="./questions.html" data-i18n="questions">QUESTIONS</a>
+          </li>
+          <li>
+            <a href="./certificates.html" data-i18n="certificates">
+              CERTIFICATES
+            </a>
+          </li>
+        </ul>
+
+        <p class="footer-text" data-i18n="classesFooterText">
+          We offer hands-on pastry masterclasses for every level — from your
+          first whisk to bakery-worthy creations.
+        </p>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+    <script type="module" src="pastryShop.js"></script>
+  </body>
+</html>
